@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturals Salon | Unisex Beauty Salon & Hair Care | Chavakkad, Kerala</title>
+    <meta name="description" content="Naturals Salon - Premium unisex beauty salon on Chettuva Road, Chavakkad, Kerala. Professional hair, skin & beauty services. Book your appointment today.">
+    <meta name="keywords" content="beauty salon chavakkad, hair salon kerala, naturals salon, bridal makeup chavakkad, spa chavakkad, unisex salon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { poppins: ['Poppins', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#111118',
+                            card: '#1a1a2e',
+                            purple: '#8b5cf6',
+                            'purple-light': '#a78bfa',
+                            'purple-dark': '#7c3aed',
+                            'purple-glow': '#c084fc',
+                            'purple-deep': '#4c1d95',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 3px; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+        .animate-on-scroll.visible.delay-1 { transition-delay: 0.1s; }
+        .animate-on-scroll.visible.delay-2 { transition-delay: 0.2s; }
+        .animate-on-scroll.visible.delay-3 { transition-delay: 0.3s; }
+        .animate-on-scroll.visible.delay-4 { transition-delay: 0.4s; }
+        .animate-on-scroll.visible.delay-5 { transition-delay: 0.5s; }
+        .hero-animate { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+        .hero-animate-d1 { animation-delay: 0.2s; }
+        .hero-animate-d2 { animation-delay: 0.4s; }
+        .hero-animate-d3 { animation-delay: 0.6s; }
+        .hero-animate-d4 { animation-delay: 0.8s; }
+        .glass {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+        .glass-light {
+            background: rgba(139, 92, 246, 0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 92, 246, 0.12);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #c084fc, #8b5cf6, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shimmer-text {
+            background: linear-gradient(90deg, #c084fc, #e9d5ff, #8b5cf6, #c084fc);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s linear infinite;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.5s;
+        }
+        .btn-primary:hover::before { left: 100%; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4); }
+        .btn-outline {
+            border: 1.5px solid rgba(139, 92, 246, 0.5);
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: #8b5cf6;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+        }
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        .service-card:hover::before { opacity: 1; }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15);
+        }
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            transform: scale(1.1);
+        }
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .gallery-item img { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .gallery-item:hover img { transform: scale(1.08); }
+        .gallery-item .overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(76, 29, 149, 0.85), rgba(76, 29, 149, 0.2) 50%, transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+            display: flex; align-items: flex-end; padding: 1.5rem;
+        }
+        .gallery-item:hover .overlay { opacity: 1; }
+        .testimonial-card { transition: all 0.3s ease; }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+        .why-card { transition: all 0.4s ease; position: relative; }
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.12);
+        }
+        .why-card:hover .why-icon {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            transform: rotateY(180deg);
+        }
+        .why-icon { transition: all 0.5s ease; }
+        .lightbox {
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(0,0,0,0.95);
+            display: none; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .lightbox.active { display: flex; opacity: 1; }
+        .lightbox img {
+            max-width: 90vw; max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 0 60px rgba(139, 92, 246, 0.3);
+        }
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-menu.open { transform: translateX(0); }
+        .navbar-scrolled {
+            background: rgba(10, 10, 10, 0.9) !important;
+            backdrop-filter: blur(20px) !important;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1) !important;
+        }
+        .whatsapp-float {
+            animation: pulse-glow 2s infinite, float 3s ease-in-out infinite;
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+        .toast {
+            position: fixed; bottom: 100px; right: 24px; z-index: 9998;
+            transform: translateX(120%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .toast.show { transform: translateX(0); }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+        }
+    </style>
+</head>
+<body class="bg-brand-black text-white overflow-x-hidden">
+
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="orb w-96 h-96 bg-brand-purple/10 top-0 left-0"></div>
+        <div class="orb w-80 h-80 bg-brand-purple-deep/20 bottom-1/4 right-0"></div>
+        <div class="orb w-64 h-64 bg-brand-purple/5 top-1/2 left-1/3"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#hero" class="flex-shrink-0 relative z-50">
+                    <img src="https://z-cdn-media.chatglm.cn/files/f989fbdc-d75e-4445-88c3-91cf6ba53842.png?auth_key=1875541716-832236f2d9c2493693b5055fe60acef8-0-b3f0b26c9b95570258d281348076b17e" alt="Naturals Salon Logo" class="h-14 md:h-16 w-auto object-contain">
+                </a>
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#hero" class="nav-link px-4 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Home</a>
+                    <a href="#about" class="nav-link px-4 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all">About</a>
+                    <a href="#services" class="nav-link px-4 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Services</a>
+                    <a href="#gallery" class="nav-link px-4 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Gallery</a>
+                    <a href="#testimonials" class="nav-link px-4 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Reviews</a>
+                    <a href="#contact" class="nav-link px-4 py-2 text-sm text-gray-300 hover:text-white rounded-full hover:bg-white/5 transition-all">Contact</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="#booking" class="hidden md:inline-flex btn-primary text-white text-xs font-semibold px-6 py-2.5 rounded-full items-center gap-2">
+                        Book Now
+                        <iconify-icon icon="lucide:calendar" width="14"></iconify-icon>
+                    </a>
+                    <button id="menuBtn" class="lg:hidden relative z-50 w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10" aria-label="Menu">
+                        <div class="flex flex-col gap-1.5" id="hamburger">
+                            <span class="block w-5 h-0.5 bg-white transition-all duration-300 origin-center" id="bar1"></span>
+                            <span class="block w-5 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
+                            <span class="block w-3.5 h-0.5 bg-white transition-all duration-300 origin-center" id="bar3"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="mobile-menu fixed inset-0 bg-brand-black/98 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-6">
+            <a href="#hero" class="mobile-nav-link text-2xl font-light text-gray-300 hover:text-white transition-colors">Home</a>
+            <a href="#about" class="mobile-nav-link text-2xl font-light text-gray-300 hover:text-white transition-colors">About</a>
+            <a href="#services" class="mobile-nav-link text-2xl font-light text-gray-300 hover:text-white transition-colors">Services</a>
+            <a href="#gallery" class="mobile-nav-link text-2xl font-light text-gray-300 hover:text-white transition-colors">Gallery</a>
+            <a href="#testimonials" class="mobile-nav-link text-2xl font-light text-gray-300 hover:text-white transition-colors">Reviews</a>
+            <a href="#contact" class="mobile-nav-link text-2xl font-light text-gray-300 hover:text-white transition-colors">Contact</a>
+            <div class="mt-4">
+                <a href="#booking" class="btn-primary text-white text-sm font-semibold px-8 py-3 rounded-full inline-flex items-center gap-2">
+                    Book Appointment
+                    <iconify-icon icon="lucide:calendar" width="16"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://z-cdn-media.chatglm.cn/files/a9abc1bb-2d11-49cf-ad79-5bbdcefbe9cc.jpg?auth_key=1875543234-5c54fd9baeb043aeaa9433b42067f9b5-0-d6421f23038f1f558cf48c06d163c8ad" alt="Naturals Salon Interior" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/30"></div>
+        </div>
+        <div class="absolute top-20 right-10 w-72 h-72 bg-brand-purple/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-brand-purple-deep/15 rounded-full blur-3xl"></div>
+        <div class="absolute right-8 lg:right-32 top-1/2 -translate-y-1/2 hidden lg:block" style="animation: spin-slow 20s linear infinite;">
+            <div class="w-80 h-80 rounded-full border border-brand-purple/20"></div>
+        </div>
+        <div class="absolute right-16 lg:right-40 top-1/2 -translate-y-1/2 hidden lg:block" style="animation: spin-slow 15s linear infinite reverse;">
+            <div class="w-64 h-64 rounded-full border border-brand-purple/10 border-dashed"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 py-32 lg:py-0">
+            <div class="max-w-2xl">
+                <div class="hero-animate hero-animate-d1 inline-flex items-center gap-2 glass-light rounded-full px-4 py-2 mb-8">
+                    <span class="w-2 h-2 bg-brand-purple rounded-full animate-pulse"></span>
+                    <span class="text-xs font-medium text-brand-purple-light tracking-wider uppercase">Now Open in Chavakkad</span>
+                </div>
+                <h1 class="hero-animate hero-animate-d2 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
+                    Enhance Your<br>
+                    <span class="shimmer-text">Natural Beauty</span>
+                </h1>
+                <p class="hero-animate hero-animate-d3 text-base lg:text-lg text-gray-400 font-light leading-relaxed mb-10 max-w-lg">
+                    Professional Hair, Skin & Beauty Services in Chavakkad. Experience world-class salon care at Naturals.
+                </p>
+                <div class="hero-animate hero-animate-d4 flex flex-wrap gap-4">
+                    <a href="#booking" class="btn-primary text-white font-semibold px-8 py-3.5 rounded-full inline-flex items-center gap-2.5 text-sm">
+                        <iconify-icon icon="lucide:calendar-check" width="18"></iconify-icon>
+                        Book Appointment
+                    </a>
+                    <a href="#services" class="btn-outline text-white font-medium px-8 py-3.5 rounded-full inline-flex items-center gap-2.5 text-sm">
+                        <iconify-icon icon="lucide:sparkles" width="18"></iconify-icon>
+                        View Services
+                    </a>
+                </div>
+                <div class="hero-animate hero-animate-d4 flex gap-8 mt-14 pt-8 border-t border-white/10">
+                    <div>
+                        <div class="text-2xl font-bold text-white">500+</div>
+                        <div class="text-xs text-gray-500 mt-1">Happy Clients</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white">15+</div>
+                        <div class="text-xs text-gray-500 mt-1">Services</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white">5★</div>
+                        <div class="text-xs text-gray-500 mt-1">Rated Salon</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+            <span class="text-[10px] uppercase tracking-widest text-gray-500">Scroll</span>
+            <iconify-icon icon="lucide:chevron-down" width="16" class="text-brand-purple"></iconify-icon>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="relative py-24 lg:py-32">
+        <div class="section-divider mb-24"></div>
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+                <div class="animate-on-scroll relative">
+                    <div class="relative rounded-3xl overflow-hidden aspect-[4/5]">
+                        <img src="https://z-cdn-media.chatglm.cn/files/a9abc1bb-2d11-49cf-ad79-5bbdcefbe9cc.jpg?auth_key=1875543234-5c54fd9baeb043aeaa9433b42067f9b5-0-d6421f23038f1f558cf48c06d163c8ad" alt="Naturals Salon Interior" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-4 lg:-right-8 glass rounded-2xl p-5 max-w-[220px]" style="animation: float 4s ease-in-out infinite;">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-10 h-10 rounded-full bg-brand-purple/20 flex items-center justify-center">
+                                <iconify-icon icon="lucide:award" width="20" class="text-brand-purple-glow"></iconify-icon>
+                            </div>
+                            <div class="text-sm font-semibold">Trusted Brand</div>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed">World's fastest growing salon chain</p>
+                    </div>
+                    <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-brand-purple/30 rounded-tl-3xl"></div>
+                </div>
+                <div>
+                    <div class="animate-on-scroll">
+                        <span class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple-light mb-4 block">About Us</span>
+                        <h2 class="text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight mb-6">
+                            A Trusted Name in<br><span class="gradient-text">Beauty & Wellness</span>
+                        </h2>
+                    </div>
+                    <div class="animate-on-scroll delay-1">
+                        <p class="text-gray-400 font-light leading-relaxed mb-8">
+                            Naturals Salon brings world-class beauty services to Chavakkad. As part of India's fastest-growing salon chain, we combine expert craftsmanship with premium products to deliver exceptional results. Our team of certified professionals is dedicated to enhancing your natural beauty in a clean, comfortable, and welcoming environment.
+                        </p>
+                    </div>
+                    <div class="space-y-5">
+                        <div class="animate-on-scroll delay-2 flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:scissors" width="20" class="text-brand-purple-glow"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Experienced Stylists</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">Trained professionals with years of expertise in modern beauty techniques</p>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll delay-3 flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:gem" width="20" class="text-brand-purple-glow"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Premium Products</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">We use only top-tier, internationally acclaimed beauty brands</p>
+                            </div>
+                        </div>
+                        <div class="animate-on-scroll delay-4 flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:shield-check" width="20" class="text-brand-purple-glow"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Hygienic Environment</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">Strict sanitation protocols for a safe and clean salon experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="relative py-24 lg:py-32">
+        <div class="section-divider mb-24"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-purple/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="animate-on-scroll text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple-light mb-4 block">Our Services</span>
+                <h2 class="animate-on-scroll delay-1 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-5">
+                    What We <span class="gradient-text">Offer</span>
+                </h2>
+                <p class="animate-on-scroll delay-2 text-gray-400 font-light leading-relaxed">
+                    From classic cuts to contemporary styles, we provide a comprehensive range of beauty services tailored to your needs.
+                </p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="animate-on-scroll delay-1 service-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="service-icon w-14 h-14 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mb-6 transition-all duration-400">
+                        <iconify-icon icon="lucide:scissors" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Haircut & Styling</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed mb-5">Trendy cuts, layers, and styling for men & women by expert stylists.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brand-purple-light font-semibold text-sm">From ₹199</span>
+                        <a href="#booking" class="text-xs text-gray-400 hover:text-brand-purple-glow transition-colors flex items-center gap-1">Book Now <iconify-icon icon="lucide:arrow-right" width="12"></iconify-icon></a>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-2 service-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="service-icon w-14 h-14 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mb-6 transition-all duration-400">
+                        <iconify-icon icon="lucide:palette" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Hair Coloring</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed mb-5">Global coloring, highlights, balayage, and fashion shades with premium dyes.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brand-purple-light font-semibold text-sm">From ₹799</span>
+                        <a href="#booking" class="text-xs text-gray-400 hover:text-brand-purple-glow transition-colors flex items-center gap-1">Book Now <iconify-icon icon="lucide:arrow-right" width="12"></iconify-icon></a>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-3 service-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="service-icon w-14 h-14 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mb-6 transition-all duration-400">
+                        <iconify-icon icon="lucide:sparkles" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Facials & Skincare</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed mb-5">Deep cleansing, anti-aging, brightening, and hydrating facial treatments.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brand-purple-light font-semibold text-sm">From ₹499</span>
+                        <a href="#booking" class="text-xs text-gray-400 hover:text-brand-purple-glow transition-colors flex items-center gap-1">Book Now <iconify-icon icon="lucide:arrow-right" width="12"></iconify-icon></a>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-1 service-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="service-icon w-14 h-14 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mb-6 transition-all duration-400">
+                        <iconify-icon icon="lucide:crown" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Bridal Makeup</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed mb-5">Stunning bridal looks—HD, airbrush, and traditional makeup packages.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brand-purple-light font-semibold text-sm">From ₹4,999</span>
+                        <a href="#booking" class="text-xs text-gray-400 hover:text-brand-purple-glow transition-colors flex items-center gap-1">Book Now <iconify-icon icon="lucide:arrow-right" width="12"></iconify-icon></a>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-2 service-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="service-icon w-14 h-14 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mb-6 transition-all duration-400">
+                        <iconify-icon icon="lucide:flower-2" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Spa & Relaxation</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed mb-5">Full body massage, aromatherapy, and stress-relief spa therapies.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brand-purple-light font-semibold text-sm">From ₹999</span>
+                        <a href="#booking" class="text-xs text-gray-400 hover:text-brand-purple-glow transition-colors flex items-center gap-1">Book Now <iconify-icon icon="lucide:arrow-right" width="12"></iconify-icon></a>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-3 service-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="service-icon w-14 h-14 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mb-6 transition-all duration-400">
+                        <iconify-icon icon="lucide:user" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Grooming for Men</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed mb-5">Beard styling, shaving, facial, and complete men's grooming packages.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-brand-purple-light font-semibold text-sm">From ₹249</span>
+                        <a href="#booking" class="text-xs text-gray-400 hover:text-brand-purple-glow transition-colors flex items-center gap-1">Book Now <iconify-icon icon="lucide:arrow-right" width="12"></iconify-icon></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="relative py-24 lg:py-32">
+        <div class="section-divider mb-24"></div>
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="animate-on-scroll text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple-light mb-4 block">Gallery</span>
+                <h2 class="animate-on-scroll delay-1 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-5">
+                    Our <span class="gradient-text">Work Speaks</span>
+                </h2>
+                <p class="animate-on-scroll delay-2 text-gray-400 font-light leading-relaxed">
+                    Take a peek at our salon ambiance and the transformations we create every day.
+                </p>
+            </div>
+
+            <!-- Gallery Grid with real salon photos -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
+                <!-- 1. Hair Styling (tall left) -->
+                <div class="animate-on-scroll delay-1 gallery-item rounded-2xl aspect-[3/4] lg:row-span-2 lg:aspect-auto" onclick="openLightbox(this)">
+                    <img src="https://z-cdn-media.chatglm.cn/files/f1815e10-4566-4981-ad62-83fd2f65a311.jpg?auth_key=1875543234-c3ec4c5a2b704c1c979a32813404da95-0-da12663204061488fe8d89f6bb818a87" alt="Hair Styling at Naturals Salon" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <span class="text-sm font-semibold">Hair Styling</span>
+                            <p class="text-xs text-white/60 mt-1">Expert cuts & blow-dry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Facial Treatment -->
+                <div class="animate-on-scroll delay-2 gallery-item rounded-2xl aspect-square" onclick="openLightbox(this)">
+                    <img src="https://z-cdn-media.chatglm.cn/files/619898c8-2fb9-4b8e-8fff-31a996dbc40c.jpg?auth_key=1875543234-6aac97b3803d4b42822e41246ead43e0-0-993b139dc7f7f8be72035da717bef3dc" alt="Facial Skincare Treatment" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <span class="text-sm font-semibold">Facial Treatment</span>
+                            <p class="text-xs text-white/60 mt-1">Advanced skincare</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Bridal Makeup -->
+                <div class="animate-on-scroll delay-3 gallery-item rounded-2xl aspect-square" onclick="openLightbox(this)">
+                    <img src="https://z-cdn-media.chatglm.cn/files/a4e28e1b-abe0-4a9d-9f76-1fb2c1c401fe.jpg?auth_key=1875543234-f9ea21dac3814648b5759937c6f848b8-0-399d629687dafc429a5dc11fe95f25f4" alt="Bridal Makeup by Naturals" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <span class="text-sm font-semibold">Bridal Makeup</span>
+                            <p class="text-xs text-white/60 mt-1">Traditional & HD looks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Our Salon (tall right) -->
+                <div class="animate-on-scroll delay-4 gallery-item rounded-2xl aspect-[3/4] lg:row-span-2 lg:aspect-auto" onclick="openLightbox(this)">
+                    <img src="https://z-cdn-media.chatglm.cn/files/a9abc1bb-2d11-49cf-ad79-5bbdcefbe9cc.jpg?auth_key=1875543234-5c54fd9baeb043aeaa9433b42067f9b5-0-d6421f23038f1f558cf48c06d163c8ad" alt="Naturals Salon Interior" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <span class="text-sm font-semibold">Our Salon</span>
+                            <p class="text-xs text-white/60 mt-1">Premium ambiance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Hair Coloring -->
+                <div class="animate-on-scroll delay-2 gallery-item rounded-2xl aspect-square" onclick="openLightbox(this)">
+                    <img src="https://z-cdn-media.chatglm.cn/files/3d586d93-d38e-4212-914b-885afeb88ce0.jpg?auth_key=1875543234-c374dc58a95c46b88105ab5429bda579-0-13e376997d20ee7936aa309a6e458b8e" alt="Hair Coloring Service" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <span class="text-sm font-semibold">Hair Coloring</span>
+                            <p class="text-xs text-white/60 mt-1">Premium dye techniques</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Spa & Hair Wash -->
+                <div class="animate-on-scroll delay-3 gallery-item rounded-2xl aspect-square" onclick="openLightbox(this)">
+                    <img src="https://z-cdn-media.chatglm.cn/files/956f62c9-6a32-4937-b428-c2bc3c00d35a.jpg?auth_key=1875543234-f551382ca88a4f869f4c929f048324db-0-4394d9ab8173e0cb3286164e135cd3c7" alt="Spa & Hair Wash" class="w-full h-full object-cover rounded-2xl">
+                    <div class="overlay rounded-2xl">
+                        <div>
+                            <span class="text-sm font-semibold">Spa & Hair Wash</span>
+                            <p class="text-xs text-white/60 mt-1">Relaxing experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10" aria-label="Close">
+            <iconify-icon icon="lucide:x" width="28"></iconify-icon>
+        </button>
+        <button id="lbPrev" class="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass flex items-center justify-center text-white hover:text-brand-purple-glow transition-colors z-10" onclick="event.stopPropagation(); navigateLightbox(-1)">
+            <iconify-icon icon="lucide:chevron-left" width="24"></iconify-icon>
+        </button>
+        <button id="lbNext" class="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full glass flex items-center justify-center text-white hover:text-brand-purple-glow transition-colors z-10" onclick="event.stopPropagation(); navigateLightbox(1)">
+            <iconify-icon icon="lucide:chevron-right" width="24"></iconify-icon>
+        </button>
+        <img id="lightboxImg" src="" alt="Gallery preview" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why" class="relative py-24 lg:py-32">
+        <div class="section-divider mb-24"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-purple/3 to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="animate-on-scroll text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple-light mb-4 block">Why Choose Us</span>
+                <h2 class="animate-on-scroll delay-1 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-5">
+                    The Naturals <span class="gradient-text">Difference</span>
+                </h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="animate-on-scroll delay-1 why-card glass rounded-3xl p-8 text-center border border-white/5">
+                    <div class="why-icon w-16 h-16 rounded-full bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:indian-rupee" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="font-semibold mb-2">Affordable Pricing</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Premium services at prices that won't break the bank</p>
+                </div>
+                <div class="animate-on-scroll delay-2 why-card glass rounded-3xl p-8 text-center border border-white/5">
+                    <div class="why-icon w-16 h-16 rounded-full bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:badge-check" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="font-semibold mb-2">Certified Experts</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Professionally trained and certified beauty specialists</p>
+                </div>
+                <div class="animate-on-scroll delay-3 why-card glass rounded-3xl p-8 text-center border border-white/5">
+                    <div class="why-icon w-16 h-16 rounded-full bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:star" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="font-semibold mb-2">Premium Brands</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Only internationally acclaimed products used in all services</p>
+                </div>
+                <div class="animate-on-scroll delay-4 why-card glass rounded-3xl p-8 text-center border border-white/5">
+                    <div class="why-icon w-16 h-16 rounded-full bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center mx-auto mb-5">
+                        <iconify-icon icon="lucide:heart" width="24" class="text-brand-purple-glow"></iconify-icon>
+                    </div>
+                    <h3 class="font-semibold mb-2">100% Satisfaction</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Customer delight is our top priority, guaranteed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="relative py-24 lg:py-32">
+        <div class="section-divider mb-24"></div>
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="animate-on-scroll text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple-light mb-4 block">Testimonials</span>
+                <h2 class="animate-on-scroll delay-1 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-5">
+                    What Our Clients <span class="gradient-text">Say</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="animate-on-scroll delay-1 testimonial-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="flex gap-1 mb-5">
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed mb-6">"Amazing experience! The stylists really understand what you want. Got the best haircut I've ever had. The ambiance is so relaxing too."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-purple/20 flex items-center justify-center text-sm font-semibold text-brand-purple-glow">AP</div>
+                        <div>
+                            <div class="text-sm font-medium">Aisha Priya</div>
+                            <div class="text-xs text-gray-500">Haircut & Styling</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-2 testimonial-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="flex gap-1 mb-5">
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed mb-6">"My bridal makeup was absolutely stunning! Everyone at my wedding kept asking about my makeup artist. Thank you Naturals for making my day special!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-purple/20 flex items-center justify-center text-sm font-semibold text-brand-purple-glow">SM</div>
+                        <div>
+                            <div class="text-sm font-medium">Sneha Menon</div>
+                            <div class="text-xs text-gray-500">Bridal Makeup</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-3 testimonial-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="flex gap-1 mb-5">
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed mb-6">"Best men's grooming salon in Chavakkad. The beard shaping and facial were top-notch. Very hygienic and professional. Highly recommended!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-purple/20 flex items-center justify-center text-sm font-semibold text-brand-purple-glow">RJ</div>
+                        <div>
+                            <div class="text-sm font-medium">Rahul Jayaram</div>
+                            <div class="text-xs text-gray-500">Men's Grooming</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-1 testimonial-card glass rounded-3xl p-8 border border-white/5">
+                    <div class="flex gap-1 mb-5">
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed mb-6">"The hair coloring service was fantastic! They suggested the perfect shade for my skin tone. The result looked so natural. Love this place!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-purple/20 flex items-center justify-center text-sm font-semibold text-brand-purple-glow">DK</div>
+                        <div>
+                            <div class="text-sm font-medium">Divya Krishnan</div>
+                            <div class="text-xs text-gray-500">Hair Coloring</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-2 testimonial-card glass rounded-3xl p-8 border border-white/5 md:col-span-2 lg:col-span-2">
+                    <div class="flex gap-1 mb-5">
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" class="text-yellow-400"></iconify-icon>
+                    </div>
+                    <p class="text-sm text-gray-300 font-light leading-relaxed mb-6">"The spa experience at Naturals is pure bliss. I took the full body massage package and it was the most relaxing 90 minutes of my month. The aromatherapy oils they use smell divine. The staff is courteous and the whole vibe of the salon is premium. Will definitely come back every month!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-purple/20 flex items-center justify-center text-sm font-semibold text-brand-purple-glow">NT</div>
+                        <div>
+                            <div class="text-sm font-medium">Nandini Thampi</div>
+                            <div class="text-xs text-gray-500">Spa & Relaxation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & CONTACT -->
+    <section id="contact" class="relative py-24 lg:py-32">
+        <div class="section-divider mb-24"></div>
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="animate-on-scroll text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple-light mb-4 block">Find Us</span>
+                <h2 class="animate-on-scroll delay-1 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-5">
+                    Location & <span class="gradient-text">Contact</span>
+                </h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="animate-on-scroll rounded-3xl overflow-hidden h-[400px] lg:h-full border border-white/5">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.5!2d76.0475!3d10.5175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDMxJzAzLjAiTiA3NsKwMDInMTEuMCJF!5e0!3m2!1sen!2sin!4v1700000000000" 
+                        width="100%" height="100%" style="border:0; min-height:400px; filter: invert(0.9) hue-rotate(260deg) saturate(0.5) brightness(0.6);" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="space-y-6">
+                    <div class="animate-on-scroll delay-1 glass rounded-3xl p-8 border border-white/5">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:map-pin" width="20" class="text-brand-purple-glow"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Our Address</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed">Naturals Salon<br>Chettuva Road, Chavakkad<br>Kerala, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll delay-2 glass rounded-3xl p-8 border border-white/5">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:phone" width="20" class="text-brand-purple-glow"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Phone</h4>
+                                <a href="tel:+919876543210" class="text-sm text-gray-400 hover:text-brand-purple-glow transition-colors">+91 98765 43210</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll delay-3 glass rounded-3xl p-8 border border-white/5">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:clock" width="20" class="text-brand-purple-glow"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-2">Working Hours</h4>
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-sm gap-8">
+                                        <span class="text-gray-400">Mon – Sat</span>
+                                        <span class="text-gray-300">9:00 AM – 8:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm gap-8">
+                                        <span class="text-gray-400">Sunday</span>
+                                        <span class="text-gray-300">10:00 AM – 6:00 PM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll delay-4 glass rounded-3xl p-8 border border-white/5">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-purple/10 border border-brand-purple/20 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:mail" width="20" class="text-brand-purple-glow"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Email</h4>
+                                <a href="mailto:chavakkad@naturals.in" class="text-sm text-gray-400 hover:text-brand-purple-glow transition-colors">chavakkad@naturals.in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="relative py-24 lg:py-32">
+        <div class="section-divider mb-24"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-purple/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="animate-on-scroll text-xs font-semibold uppercase tracking-[0.2em] text-brand-purple-light mb-4 block">Book Now</span>
+                    <h2 class="animate-on-scroll delay-1 text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mb-5">
+                        Book Your <span class="gradient-text">Appointment</span>
+                    </h2>
+                    <p class="animate-on-scroll delay-2 text-gray-400 font-light leading-relaxed">
+                        Fill in the details below and we'll confirm your appointment shortly.
+                    </p>
+                </div>
+                <form id="bookingForm" class="animate-on-scroll delay-2 glass rounded-3xl p-8 lg:p-10 border border-white/5 space-y-5" onsubmit="handleBooking(event)">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 mb-2 uppercase tracking-wider">Your Name</label>
+                            <input type="text" name="name" required placeholder="Enter your name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-brand-purple/50 focus:ring-1 focus:ring-brand-purple/30 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 mb-2 uppercase tracking-wider">Phone Number</label>
+                            <input type="tel" name="phone" required placeholder="+91 98765 43210" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-brand-purple/50 focus:ring-1 focus:ring-brand-purple/30 transition-all">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-400 mb-2 uppercase tracking-wider">Select Service</label>
+                        <select name="service" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:outline-none focus:border-brand-purple/50 focus:ring-1 focus:ring-brand-purple/30 transition-all appearance-none" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236b7280%22 stroke-width=%222%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 16px center;">
+                            <option value="" disabled selected>Choose a service</option>
+                            <option value="haircut">Haircut & Styling</option>
+                            <option value="coloring">Hair Coloring</option>
+                            <option value="facial">Facials & Skincare</option>
+                            <option value="bridal">Bridal Makeup</option>
+                            <option value="spa">Spa & Relaxation</option>
+                            <option value="grooming">Grooming for Men</option>
+                        </select>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 mb-2 uppercase tracking-wider">Preferred Date</label>
+                            <input type="date" name="date" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:outline-none focus:border-brand-purple/50 focus:ring-1 focus:ring-brand-purple/30 transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-gray-400 mb-2 uppercase tracking-wider">Preferred Time</label>
+                            <select name="time" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:outline-none focus:border-brand-purple/50 focus:ring-1 focus:ring-brand-purple/30 transition-all appearance-none" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2216%22 height=%2216%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236b7280%22 stroke-width=%222%22><path d=%22M6 9l6 6 6-6%22/></svg>'); background-repeat: no-repeat; background-position: right 16px center;">
+                                <option value="" disabled selected>Select time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary w-full text-white font-semibold py-3.5 rounded-xl text-sm flex items-center justify-center gap-2 mt-2">
+                        <iconify-icon icon="lucide:calendar-check" width="18"></iconify-icon>
+                        Confirm Appointment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="relative border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+                <div class="lg:col-span-1">
+                    <img src="https://z-cdn-media.chatglm.cn/files/f989fbdc-d75e-4445-88c3-91cf6ba53842.png?auth_key=1875541716-832236f2d9c2493693b5055fe60acef8-0-b3f0b26c9b95570258d281348076b17e" alt="Naturals Salon" class="h-14 w-auto object-contain mb-5">
+                    <p class="text-sm text-gray-500 font-light leading-relaxed mb-6">
+                        World's fastest growing salon chain, now in Chavakkad. Your beauty, our passion.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-purple/20 hover:text-brand-purple-glow hover:border-brand-purple/30 transition-all" aria-label="Instagram">
+                            <iconify-icon icon="lucide:instagram" width="18"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-purple/20 hover:text-brand-purple-glow hover:border-brand-purple/30 transition-all" aria-label="Facebook">
+                            <iconify-icon icon="lucide:facebook" width="18"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-purple/20 hover:text-brand-purple-glow hover:border-brand-purple/30 transition-all" aria-label="YouTube">
+                            <iconify-icon icon="lucide:youtube" width="18"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-purple/20 hover:text-brand-purple-glow hover:border-brand-purple/30 transition-all" aria-label="Twitter">
+                            <iconify-icon icon="lucide:twitter" width="18"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold mb-5">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#hero" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Services</a></li>
+                        <li><a href="#gallery" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Gallery</a></li>
+                        <li><a href="#testimonials" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Reviews</a></li>
+                        <li><a href="#booking" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Book Now</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold mb-5">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Haircut & Styling</a></li>
+                        <li><a href="#services" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Hair Coloring</a></li>
+                        <li><a href="#services" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Facials & Skincare</a></li>
+                        <li><a href="#services" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Bridal Makeup</a></li>
+                        <li><a href="#services" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Spa & Relaxation</a></li>
+                        <li><a href="#services" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">Men's Grooming</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold mb-5">Contact Info</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:map-pin" width="16" class="text-brand-purple mt-0.5 flex-shrink-0"></iconify-icon>
+                            <span class="text-sm text-gray-500">Chettuva Road, Chavakkad, Kerala, India</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:phone" width="16" class="text-brand-purple flex-shrink-0"></iconify-icon>
+                            <a href="tel:+919876543210" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">+91 98765 43210</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:mail" width="16" class="text-brand-purple flex-shrink-0"></iconify-icon>
+                            <a href="mailto:chavakkad@naturals.in" class="text-sm text-gray-500 hover:text-brand-purple-glow transition-colors">chavakkad@naturals.in</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:clock" width="16" class="text-brand-purple flex-shrink-0"></iconify-icon>
+                            <span class="text-sm text-gray-500">Mon-Sat: 9AM-8PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="sr-only" aria-label="Sitemap">
+                <a href="#hero">Home</a> · <a href="#about">About</a> · <a href="#services">Services</a> · <a href="#gallery">Gallery</a> · <a href="#why">Why Choose Us</a> · <a href="#testimonials">Testimonials</a> · <a href="#contact">Contact</a> · <a href="#booking">Book Appointment</a>
+            </nav>
+            <div class="section-divider mb-6"></div>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-gray-600">© 2025 Naturals Salon, Chavakkad. All rights reserved.</p>
+                <p class="text-xs text-gray-700">Designed with <span class="text-brand-purple">♥</span> for beauty</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/919876543210?text=Hi!%20I'd%20like%20to%20book%20an%20appointment%20at%20Naturals%20Salon%20Chavakkad" target="_blank" rel="noopener noreferrer" 
+       class="whatsapp-float fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:bg-green-400 transition-colors" aria-label="Chat on WhatsApp">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast glass rounded-2xl p-5 border border-brand-purple/20 max-w-sm">
+        <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                <iconify-icon icon="lucide:check" width="20" class="text-green-400"></iconify-icon>
+            </div>
+            <div>
+                <h4 class="text-sm font-semibold mb-1">Booking Confirmed!</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">We'll contact you shortly to confirm your appointment details.</p>
+            </div>
+            <button onclick="hideToast()" class="text-gray-500 hover:text-white transition-colors flex-shrink-0" aria-label="Close">
+                <iconify-icon icon="lucide:x" width="16"></iconify-icon>
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
+        });
+
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('open');
+            if (menuOpen) {
+                bar1.style.transform = 'rotate(45deg) translate(3px, 3px)';
+                bar2.style.opacity = '0';
+                bar3.style.transform = 'rotate(-45deg) translate(3px, -3px)';
+                bar3.style.width = '1.25rem';
+                document.body.style.overflow = 'hidden';
+            } else {
+                bar1.style.transform = '';
+                bar2.style.opacity = '1';
+                bar3.style.transform = '';
+                bar3.style.width = '0.875rem';
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+                bar1.style.transform = '';
+                bar2.style.opacity = '1';
+                bar3.style.transform = '';
+                bar3.style.width = '0.875rem';
+                document.body.style.overflow = '';
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+        let currentLightboxIndex = 0;
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(el) {
+            const img = el.querySelector('img');
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            galleryItems.forEach((item, i) => { if (item === el) currentLightboxIndex = i; });
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(dir) {
+            currentLightboxIndex = (currentLightboxIndex + dir + galleryItems.length) % galleryItems.length;
+            const img = galleryItems[currentLightboxIndex].querySelector('img');
+            lightboxImg.style.opacity = '0';
+            setTimeout(() => { lightboxImg.src = img.src; lightboxImg.alt = img.alt; lightboxImg.style.opacity = '1'; }, 150);
+        }
+
+        lightboxImg.style.transition = 'opacity 0.15s ease';
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        function handleBooking(e) {
+            e.preventDefault();
+            const name = new FormData(e.target).get('name');
+            showToast(name);
+            e.target.reset();
+        }
+
+        function showToast(name) {
+            const toast = document.getElementById('toast');
+            toast.querySelector('h4').textContent = `Thank you, ${name || 'Guest'}!`;
+            toast.classList.add('show');
+            setTimeout(hideToast, 5000);
+        }
+
+        function hideToast() { document.getElementById('toast').classList.remove('show'); }
+
+        const dateInput = document.querySelector('input[type="date"]');
+        if (dateInput) dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(targetId);
+                if (target) {
+                    window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
